@@ -9,4 +9,9 @@ func main() {
 		fmt.Println("Current value of i:", i, "Current sum:", sum)
 	}
 	fmt.Println("Result: ", sum)
+
+	persons := []string{"Alice", "Bob", "Charlie", "David", "Eve"}
+	for index, name := range persons {
+		fmt.Printf("Index: %d, Name: %s\n", index, name)
+	}
 }

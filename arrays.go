@@ -32,4 +32,8 @@ func main() {
 	p1 := people[0]
 	p2 := people[1]
 	fmt.Println("Comparing p1 and p2: %t", p1==p2)
+
+	// printing the length of the arrays
+	fmt.Println("Length of arr: ", len(arr))
+	fmt.Printf("Length of people array: %d", len(people))
 }
