@@ -1,11 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	defer fmt.Println("This will be printed last after the main function completes.")
+	fmt.Println("This is a simple Go program demonstrating the use of defer.")
+	defer fmt.Println("This message will be printed last.")
+	fmt.Println("Last line of program.")
+
 	for i := 0; i < 3; i++ {
-		defer fmt.Println("Deferred call number:", i)
+		// Using defer inside a loop to demonstrate that deferred calls are executed in LIFO order
+		defer fmt.Printf("Deferred message %d\n", i)
 	}
-	fmt.Println("Hello, World!")
+
 }
