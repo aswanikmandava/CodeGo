@@ -14,4 +14,21 @@ func main() {
 	for index, name := range persons {
 		fmt.Printf("Index: %d, Name: %s\n", index, name)
 	}
+
+	var count int = 0
+
+	for {
+		if count == 4 {
+			break
+		}
+		fmt.Println("Count=", count)
+		count++
+	}
+
+	for i:=1; i<5; i++ {
+		if i == 2 {
+			continue // skip the rest of the block
+		}
+		fmt.Println("i=", i)
+	}
 }

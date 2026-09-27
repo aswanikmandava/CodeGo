@@ -16,4 +16,9 @@ func main() {
 		return a + b
 	}
 	fmt.Println(p(5, 10))
+
+	// define a function and call it inline
+	func(message string) {
+		fmt.Println(message)
+	}("Hello func!")
 }
