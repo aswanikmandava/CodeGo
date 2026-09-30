@@ -13,8 +13,12 @@ type User struct {
 func main() {
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request){
 		if r.Method == http.MethodGet {
+			// headers must be set before writing the content
 			// set HTTP response header
 			w.Header().Set("Content-Type", "application/json")
+			w.Header().Set("X-MyAppHeader", "localapp")
+			// set HTTP response code
+			w.WriteHeader(http.StatusCreated)
 
 			// init User
 			user_1 := User{Username: "amandava", Email: "amandava@example.com"}
