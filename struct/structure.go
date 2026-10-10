@@ -29,4 +29,14 @@ func main() {
 	fmt.Println("p2: ", p2)
 	fmt.Println("p3: ", p3)
 	fmt.Println("p4: ", p4)
+
+	// another way to create a variable of the struct type
+	var user Person
+	user.name = "Aswani"
+	// %v prints just the values of struct instance
+	fmt.Printf("%v\n", user)
+	//%+v prints both key and value of struct instance
+	fmt.Printf("%+v\n", user)
+    var customMsg string = fmt.Sprintf("%s's age is %d", user.name, user.age)
+	fmt.Println(customMsg)
 }

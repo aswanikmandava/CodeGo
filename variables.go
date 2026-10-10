@@ -13,8 +13,12 @@ func main() {
 	// local variable declarations
 	// variable a declared in function scope, shadows package-level variable a
 	var a int = 30 // variable a in function scope, shadows package-level variable a
+	// var greeting string = "Hello, World!"
+	greeting := "Hello, Go!" // shorthand variable declaration and initialization in function scope
+	// := is shorthand for declaring and initializing a variable in one step. The type is inferred from the value assigned.
+	greeting = "Hello, Go! Updated" // updating the value of greeting
 
-	// shorthand variable declaration in function scope
+	// shorthand variable declaration and initialization in function scope
 	b := 50 // b is a new variable in function scope, shadows package-level variable b
 	fmt.Printf("a = %d\n", a)
 	fmt.Printf("b = %d\n", b)
@@ -23,4 +27,5 @@ func main() {
 	// overwriting the value of b
 	b = 60 // b is now 60 in function scope
 	fmt.Printf("b = %d\n", b)
+	fmt.Println(greeting)
 }

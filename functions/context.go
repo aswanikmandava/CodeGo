@@ -13,7 +13,7 @@ func slowFn(ctx context.Context) (string, error) {
 	// Simulate work using a select statement to listen for timeouts
 	select {
 	// simulating long running task longer than the time given
-	case <-time.After(7 * time.Second):
+	case <-time.After(3 * time.Second):
 		return "Success data", nil
 	case <-ctx.Done():
 		return "", ctx.Err() // Returns context.DeadlineExceeded if it times out
