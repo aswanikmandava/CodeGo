@@ -1,0 +1,18 @@
+
+app:
+  Name: MyGoApp
+  Env: development
+  Logging:
+    LogName: app.log
+    LogLevel: info
+    LogMaxSize: 1000000
+rabbitmq:
+  Host: localhost
+  Port: 5672
+  User: guest
+  Pass: guest
+  Exchange: AppExchange
+  ExchangeType: topic
+  RoutingKey: app_routing_key
+logging:
+  level: debug
