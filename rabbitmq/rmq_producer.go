@@ -1,13 +1,12 @@
 package main
 
 import (
-	amqp "github.com/rabbitmq/amqp091-go"
-	"CodeGo/logger"
 	"CodeGo/config"
+	"CodeGo/logger"
 	"fmt"
-	"time"
+	amqp "github.com/rabbitmq/amqp091-go"
 	"os"
-
+	"time"
 )
 
 func main() {
@@ -26,7 +25,7 @@ func main() {
 
 	// make a connection to RabbitMQ server
 	rmq_url := fmt.Sprintf("amqp://%s:%s@%s:%d", c.RabbitMQ.User, c.RabbitMQ.Pass, c.RabbitMQ.Host, c.RabbitMQ.Port)
-    conn, err := amqp.Dial(rmq_url)
+	conn, err := amqp.Dial(rmq_url)
 	if err != nil {
 		logger.Fatalf("Failed to establish connection to RabbitMQ: %v", err)
 	}
@@ -56,10 +55,10 @@ func main() {
 	// declare a durable queue
 	_, err = chn.QueueDeclare(
 		c.RabbitMQ.Queue,
-		true,	// durable
-		false,	// auto-delete
-		false,	// exclusive
-		false,	// noWait
+		true,  // durable
+		false, // auto-delete
+		false, // exclusive
+		false, // noWait
 		nil,
 	)
 	if err != nil {
